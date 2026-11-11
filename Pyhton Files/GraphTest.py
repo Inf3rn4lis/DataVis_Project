@@ -5,18 +5,12 @@ import matplotlib.pyplot as plt
 yearlyWeather = pd.read_csv("https://raw.githubusercontent.com/Inf3rn4lis/DataVis_Project/main/Databases/Modified/YearlyDataOnly.csv")
 
 print('Rows:', len(yearlyWeather))
+print(yearlyWeather.to_string())
 
-# average Mean temp over the entire year
-#catagoryMeanTemp = (orders.groupby('category', as_index=False).agg(revenue=('revenue', 'sum'), order_count=('order_id', 'count')).sort_values('revenue', ascending=False))
+'''
+fig, ax = plt.subplots(figsize = (8,4))
+ax.plot(yearlyWeather[""]
 
-# Highest temp in the year
-#catagoryMaxTemp =
 
-# Lowest temp in the year
-#catagoryMinTemp = 
-
-# Average wind speed over the year
-#catagoryWindSpeed =
-
-# precipitation amount in mm
-#dcatagoryRain =
+ax.set_title("Yearly Temperture Graph")
+'''
