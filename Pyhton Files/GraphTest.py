@@ -6,3 +6,17 @@ yearlyWeather = pd.read_csv("https://raw.githubusercontent.com/Inf3rn4lis/DataVi
 
 print('Rows:', len(yearlyWeather))
 
+# average Mean temp over the entire year
+#catagoryMeanTemp = (orders.groupby('category', as_index=False).agg(revenue=('revenue', 'sum'), order_count=('order_id', 'count')).sort_values('revenue', ascending=False))
+
+# Highest temp in the year
+#catagoryMaxTemp =
+
+# Lowest temp in the year
+#catagoryMinTemp = 
+
+# Average wind speed over the year
+#catagoryWindSpeed =
+
+# precipitation amount in mm
+#dcatagoryRain =
