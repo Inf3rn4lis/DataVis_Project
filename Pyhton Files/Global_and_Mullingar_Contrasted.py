@@ -19,7 +19,7 @@ fig, ax = plt.subplots(figsize = (12,8))
 avgScatter = ax.scatter(yearlyWeather["Year"], yearlyWeather["Avg_Mean_Temp"], marker = "o", label = "Mullingar Average", color = "tab:green")
 
 # calculate equation for trendline
-z_avg = np.polyfit (yearlyWeather["Year"],yearlyWeather["Avg_Mean_Temp"],1)
+z_avg = np.polyfit (yearlyWeather["Year"],yearlyWeather["Avg_Mean_Temp"],2)
 trendlineEq = np.poly1d(z_avg)
 
 # apply trend line
