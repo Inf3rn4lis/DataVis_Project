@@ -19,7 +19,7 @@ fig, ax = plt.subplots(figsize = (12,8))
 avgScatter = ax.scatter(yearlyWeather["Year"], yearlyWeather["Avg_Mean_Temp"], marker = "o", label = "Mullingar Average", color = "tab:green")
 
 # calculate equation for trendline
-z_avg = np.polyfit (yearlyWeather["Year"],yearlyWeather["Avg_Mean_Temp"],2)
+z_avg = np.polyfit (yearlyWeather["Year"],yearlyWeather["Avg_Mean_Temp"],1)
 trendlineEq = np.poly1d(z_avg)
 
 # apply trend line
@@ -39,11 +39,18 @@ globalWeather = pd.read_csv("https://raw.githubusercontent.com/Inf3rn4lis/DataVi
 avgScatter = ax.scatter(globalWeather["Year"], globalWeather["Avg-Temp"], marker = "o", label = "Global Average", color = "tab:cyan")
 
 # calculate equation for trendline
-z_avg = np.polyfit (globalWeather["Year"],globalWeather["Avg-Temp"],1)
+z_avg = np.polyfit (globalWeather["Year"],globalWeather["Avg-Temp"],3)
 trendlineEq = np.poly1d(z_avg)
 
 # apply trend line
 ax.plot(globalWeather["Year"], trendlineEq(globalWeather["Year"]), label = "Global Average Trendline", alpha = 0.5, color = "tab:cyan")
+
+# Correlation Coeffecient.
+correlation_cof = np.corrcoef(globalWeather["Avg-Temp"],yearlyWeather["Min_Temp"])[0,1]
+print(correlation_cof)
+
+corrcorrelation_cof = round(correlation_cof, 2)
+
 
 # Legend
 ax.legend(title = "Temp Type")
