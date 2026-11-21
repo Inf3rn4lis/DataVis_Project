@@ -22,12 +22,18 @@ trendlineEq = np.poly1d(z_avg)
 # apply trend line
 ax.plot(yearlyWeather["Year"], trendlineEq(yearlyWeather["Year"]), label = "Average Trendline", alpha = 0.5, color = "tab:green")
 
+# Correlation Coeffecient.
+correlation_cof = np.corrcoef(yearlyWeather["Year"],yearlyWeather["Avg_Mean_Temp"])[0,1]
+print(correlation_cof)
+
+corrcorrelation_cof = round(correlation_cof, 2)
+
 ax.legend(title = "Temp Type")
 
 #Lables
 ax.set_xlabel('Year')
 ax.set_ylabel('Temperture (*C)')
 
-ax.set_title("Mullingar Yearly Average Temperture Graph")
+ax.set_title("Mullingar Yearly Average Temperture Graph\n R="+str(corrcorrelation_cof))
 
 plt.show()
